@@ -1,4 +1,4 @@
-package net.log4j.to.json;
+package net.log.to.json;
 
 import com.alibaba.fastjson.JSONObject;
 import net.tools.HostData;
@@ -14,7 +14,7 @@ import java.util.TimeZone;
  * 自定义的Json输出格式
  * Created by QinDongLiang on 2017/9/13.
  */
-public class JsonLayout extends Layout {
+public class Log4jJsonLayout extends Layout {
 
     //组装所有的json数据
     private JSONObject kv;
