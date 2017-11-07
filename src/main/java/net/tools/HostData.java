@@ -8,6 +8,7 @@ import java.net.UnknownHostException;
  */
 public class HostData {
 
+    //设置主机名
     public String hostName;
 
     public String getHostName() {
@@ -20,6 +21,7 @@ public class HostData {
 
     public HostData() {
         try {
+
             this.hostName = java.net.InetAddress.getLocalHost().getHostName();
         } catch (UnknownHostException e) {
             setHostName("unknown-host");
