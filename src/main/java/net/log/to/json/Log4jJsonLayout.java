@@ -16,6 +16,8 @@ import java.util.TimeZone;
  */
 public class Log4jJsonLayout extends Layout {
 
+
+
     //组装所有的json数据
     private JSONObject kv;
     //获取主机名，如果不能获取，就设置为未知host
@@ -23,7 +25,16 @@ public class Log4jJsonLayout extends Layout {
     final TimeZone UTC = TimeZone.getTimeZone("UTC");
     //转成UTC时间，符合logstash的转化标准，能直接插入到es里面
     final FastDateFormat ft = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", UTC);
+    //业务类型
+    private String logType;
 
+    public String getLogType() {
+        return logType;
+    }
+
+    public void setLogType(String logType) {
+        this.logType = logType;
+    }
 
     public String format(LoggingEvent event) {
 
@@ -37,6 +48,7 @@ public class Log4jJsonLayout extends Layout {
         kv.put("line_number",event.getLocationInformation().getLineNumber());//line_number
         kv.put("class",event.getLocationInformation().getClassName());//class_name
         kv.put("method",event.getLocationInformation().getMethodName());//method_name
+        kv.put("logType",logType);
 
         if(event.getThrowableInformation()!=null){
           String exception= ExceptionUtils.getStackTrace(event.getThrowableInformation().getThrowable());
