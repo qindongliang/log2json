@@ -6,7 +6,7 @@
 
     <groupId>com.xuele.tools</groupId>
     <artifactId>log-to-json</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
             <properties>
                 <fast.json>1.2.15</fast.json>
