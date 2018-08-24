@@ -65,7 +65,7 @@ public class Log4jJsonLayout extends Layout {
             kv.put("message", event.getRenderedMessage());
         }
 
-        return kv.toString()+"\n";
+        return kv.toString();
     }
 
     public boolean ignoresThrowable() {
