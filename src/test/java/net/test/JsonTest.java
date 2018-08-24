@@ -34,7 +34,7 @@ public class JsonTest {
 
         hm2.put("data",hm);
 
-        log.info(hm2);
+        log.info(hm);
     }
 
 
